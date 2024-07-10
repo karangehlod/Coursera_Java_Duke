@@ -47,6 +47,30 @@ public class StringsFirstAssignments {
         return res;
     }
 
+    public void FindWebLink(String url) {
+        URLResource urls = new URLResource(url);
+        System.out.println("Get urls from: " + url + "\n");
+        for (String linkString : urls.words()) {
+            // System.out.println(linkString);
+            linkString.toLowerCase();
+
+            String testString = "youtube.com";
+            if (linkString.contains(testString)) {
+                int pos = linkString.indexOf(testString);
+                int start = linkString.lastIndexOf("href=\"", pos);
+                int stop = linkString.indexOf("\">", pos);
+
+                // get the substring between start and stop indices;
+                String pureURL = linkString.substring(start + 6, stop);
+
+                System.out.println("URL: " + linkString);
+                System.out.println("URL: " + pureURL + "\n");
+
+            }
+        }
+
+    }
+
     public static void main(String[] args) {
         String startCodon = "ATG";
         String endCodon = "TAA";
@@ -86,5 +110,7 @@ public class StringsFirstAssignments {
         String b3 = "forest";
         System.out.println("The part of the string after " + a3 + " in " + b3 + " is " + lastPart(a3, b3));
 
+        StringsFirstAssignments stringsFirstAssignments = new StringsFirstAssignments();
+        stringsFirstAssignments.FindWebLink("http://www.dukelearntoprogram.com/course2/data/manylinks.html");
     }
 }
