@@ -41,7 +41,6 @@ public class AllGene {
             } else {
                 currentIndex = dna.indexOf(codon, currentIndex + 1);
             }
-
         }
         return -1;
     }
@@ -66,7 +65,7 @@ public class AllGene {
         }
     }
 
-    //Count CTG
+    // Count CTG
     public void CountCTG(String dna) {
         int count = 0;
         int startIndex = 0;
@@ -84,53 +83,82 @@ public class AllGene {
 
     public float CGRatio(String dna) {
         int count = 0;
+        dna = dna.toUpperCase();
         for (int i = 0; i < dna.length(); i++) {
             if (dna.charAt(i) == 'C' || dna.charAt(i) == 'G') {
                 count += 1;
             }
         }
-        float res = (float) count / dna.length();
-        return res;
+        // float res = (float) count / dna.length();
+        // return res;
+        return ((float) count) / dna.length();
     }
 
-    
     public void ProcessGene(StorageResource sr) {
         int sizeCount = 0;
         int cgCount = 0;
         int maxSize = 0;
-        for (String gene : sr.data()) {
-            if (gene.length() > 9) {
-                System.out.println(gene);
-                sizeCount += 1;
-            }
-            if (CGRatio(gene) > 0.35) {
-                System.out.println(gene);
-                cgCount += 1;
-            }
-            if (maxSize < gene.length()) {
-                maxSize = gene.length();
+        for (String dna : sr.data()) {
+            StorageResource genelist = GetAllGene(dna);
+            for (String gene : genelist.data()) {
+                if (gene.length() > 60) {
+                    // System.out.println(gene);
+                    sizeCount += 1;
+                }
+                if (CGRatio(gene) > 0.35) {
+                    // System.out.println(gene);
+                    cgCount += 1;
+                }
+                if (maxSize < gene.length()) {
+                    maxSize = gene.length();
+                }
             }
         }
         System.out.println("the number of Strings in sr that are longer than 9 characters : " + sizeCount);
         System.out.println("the number of Strings in sr whose C-G-ratio is higher than 0.35 : " + cgCount);
-        System.out.println("length of the longest gene in sr : "+ maxSize);
+        System.out.println("length of the longest gene in sr : " + maxSize);
+    }
+    
+    public String mystery(String dna) {
+        int pos = dna.indexOf("T");
+        int count = 0;
+        int startPos = 0;
+        String newDna = "";
+        if (pos == -1) {
+            return dna;
+        }
+        while (count < 3) {
+            count += 1;
+            newDna = newDna + dna.substring(startPos, pos);
+            startPos = pos + 1;
+            pos = dna.indexOf("T", startPos);
+            if (pos == -1) {
+                break;
+            }
+        }
+        newDna = newDna + dna.substring(startPos);
+        return newDna;
     }
 
     public static void main(String[] args) {
         AllGene strAssignment = new AllGene();
 
-        // StorageResource resListGene = strAssignment.GetAllGene("AATGCTAACTAGCTGACTAAT");
-        // for (String gene : resListGene.data()) {
-        //     System.out.println(gene);
-        // }
-        // System.out.println(strAssignment.CGRatio("ATGCCATAG"));
-        // strAssignment.CountCTG("ATGCCTGATAG");
+        StorageResource resListGene =
+        strAssignment.GetAllGene("AATGCTAACTAGCTGACTAAT");
+        for (String gene : resListGene.data()) {
+            System.out.println(gene);
+        }
+        System.out.println(strAssignment.CGRatio("ATGCCATAG"));
+        strAssignment.CountCTG("ATGCCTGATAG");
 
-        FileResource fr = new FileResource("input/dna/brca1line.fa");
+        //change filename to evalute another file
+        FileResource fr = new FileResource("input/dna/GRch38dnapart.fa");
         String dna = fr.asString();
         StorageResource sr = new StorageResource();
         sr.add(dna);
         strAssignment.ProcessGene(sr);
+        strAssignment.CountCTG(dna);
+        System.out.println(strAssignment.mystery("ATGTGAGAAGATT"));
 
     }
 }
