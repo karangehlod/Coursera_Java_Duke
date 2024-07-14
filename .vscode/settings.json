@@ -1,7 +1,8 @@
 {
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "Java_codes/lib/apache-csv.jar",
-        "Java_codes/lib/courserajava.jar"
-    ]
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "Java_codes/lib/apache-csv.jar",
+    "Java_codes/lib/courserajava.jar"
+  ],
+  "java.project.sourcePaths": ["Java_codes", "MiniProj"]
 }
