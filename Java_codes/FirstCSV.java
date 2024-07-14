@@ -66,9 +66,9 @@ public class FirstCSV {
         FileResource fr = new FileResource();
         CSVParser parser = fr.getCSVParser();
         // ListOfExporter(parser, "coffee");
-        // System.out.println(CountryInfo(parser, "Germany"));
-        // ListExportersTwoProducts(parser, "diamond", "gold");
-        // System.out.println(NumberOfExporters(parser, "gold"));
-        BigExporters(parser, "$999,999,999");
+        // System.out.println(CountryInfo(parser, "Nauru"));
+        // ListExportersTwoProducts(parser, "cotton", "flowers");
+        // System.out.println(NumberOfExporters(parser, "cocoa"));
+        BigExporters(parser, "$999,999,999,999");
     }
 }
