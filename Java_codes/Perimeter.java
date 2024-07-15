@@ -110,18 +110,18 @@ public class Perimeter {
     }
 
     public void testPerimeter() {
-        FileResource fr = new FileResource();
-        Shape s = new Shape(fr);
-        double length = getPerimeter(s);
-        System.out.println("perimeter = " + length);
-        System.out.println(getNumPoints(s));
-        System.out.println("Average length" +getAverageLength(s));
-        System.out.println("Longest Side " + getLargestSide(s));
-        System.out.println("Largest X is " + getLargestX(s));
+        // FileResource fr = new FileResource();
+        // Shape s = new Shape(fr);
+        // double length = getPerimeter(s);
+        // System.out.println("perimeter = " + length);
+        // System.out.println(getNumPoints(s));
+        // System.out.println("Average length" +getAverageLength(s));
+        // System.out.println("Longest Side " + getLargestSide(s));
+        // System.out.println("Largest X is " + getLargestX(s));
 
-        // System.out.println("Largest perameter among file is" + getLargestPerimeterMultipleFiles());
+        System.out.println("Largest perameter among file is" + getLargestPerimeterMultipleFiles());
 
-        // System.out.println("largest Perimeter file name is" + getFileWithLargestPerimeter());
+        System.out.println("largest Perimeter file name is" + getFileWithLargestPerimeter());
     }
 
     
