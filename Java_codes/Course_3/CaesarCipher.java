@@ -3,6 +3,13 @@ package Course_3;
 import edu.duke.FileResource;
 
 public class CaesarCipher {
+
+    /**
+     * Encrypt using single key Caesar Cipher
+     * @param input
+     * @param key
+     * @return
+     */
     public String encrypt(String input, int key) {
         StringBuilder encrypted = new StringBuilder(input);
         String alphabateString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -30,6 +37,13 @@ public class CaesarCipher {
         return encrypted.toString();
     }
 
+    /**
+     * Encrypt using two keys 
+     * @param input
+     * @param key1
+     * @param key2
+     * @return
+     */
     public String encrypt(String input, int key1, int key2) {
         StringBuilder encrypted = new StringBuilder(input);
         String alphabateString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -81,7 +95,7 @@ public class CaesarCipher {
         System.out.println(caesarCipher
                 .encrypt("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!", 15));
         System.out.println(caesarCipher
-                .encrypt("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!", 8, 21));
+                .encrypt("Top ncmy qkff vi vguv vbg ycpx", 26-2 , 26-20));
 
     }
 }
