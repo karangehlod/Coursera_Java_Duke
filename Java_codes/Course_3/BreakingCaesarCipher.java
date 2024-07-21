@@ -79,6 +79,7 @@ public class BreakingCaesarCipher {
         int maxIdx = MaxIndex(freq);
         // e being mostly used in english
         int dkey = maxIdx - 4;
+        // boundary check
         if (maxIdx < 4) {
             dkey = 26 - (4 - maxIdx);
         }
