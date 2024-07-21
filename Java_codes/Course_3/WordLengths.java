@@ -14,7 +14,10 @@ public class WordLengths {
         for (String word : resource.words()) {
             int len = word.length();
             boolean fLetter = Character.isLetter(word.charAt(0));
-            boolean lLetter = Character.isLetter(word.charAt(word.length() - 1));
+            boolean lLetter = true;
+            if (len > 1) {
+                lLetter = Character.isLetter(word.charAt(word.length() - 1));
+            }
             // if first and last index is not char then on false condition reduce non-letter
             if (!fLetter && !lLetter) {
                 len = len - 2;
@@ -35,6 +38,7 @@ public class WordLengths {
 
     /**
      * Return string comprise of even or odd places character
+     * 
      * @param str
      * @param evenOdd
      * @return
@@ -93,9 +97,9 @@ public class WordLengths {
     public static void main(String[] args) {
         WordLengths wordlenLengths = new WordLengths();
         FileResource fr = new FileResource("Java_codes\\input\\Course_3_ip\\assesment.txt");
-        // int[] counts = new int[31];
-        // wordlenLengths.CountWordlength(fr, counts);
-        wordlenLengths.CaesarCipherDecryptTwoKeys("Akag tjw Xibhr awoa aoee xakex znxag xwko");
+        int[] counts = new int[31];
+        wordlenLengths.CountWordlength(fr, counts);
+        wordlenLengths.DecryptTwoKeys("Aal uttx hm aal Qtct Fhljha pl Wbdl. Pvxvxlx!");
 
         StringBuilder sbv = new StringBuilder();
         for (String s : fr.lines()) {

@@ -93,9 +93,9 @@ public class CaesarCipher {
             System.out.println(decrypted);
         }
         System.out.println(caesarCipher
-                .encrypt("At noon be in the conference room with your hat on for a surprise party. YELL LOUD!", 15));
+                .encrypt("Can you imagine life WITHOUT the internet AND computers in your pocket?", 15));
         System.out.println(caesarCipher
-                .encrypt("Top ncmy qkff vi vguv vbg ycpx", 26-2 , 26-20));
+                .encrypt("Hfs cpwewloj loks cd Hoto kyg Cyy.", 26-14 , 26-24));
 
     }
 }
