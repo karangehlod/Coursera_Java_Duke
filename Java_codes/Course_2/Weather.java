@@ -1,3 +1,5 @@
+package Course_2;
+
 import java.io.File;
 
 import org.apache.commons.csv.CSVParser;
@@ -114,7 +116,7 @@ public class Weather {
         }
         return avarage;
     }
-    
+
     public static Double AverageTemperatureWithHighHumidityInFile(CSVParser parser, int value) {
         Double sumTemperature = 0.0;
         int count = 0;
@@ -127,11 +129,12 @@ public class Weather {
                 }
             }
         }
-        return sumTemperature /count;
+        return sumTemperature / count;
     }
 
     public static void main(String[] args) {
-        // FileResource fr = new FileResource("Java_codes\\input\\nc_weather\\2013\\weather-2013-09-02.csv");
+        // FileResource fr = new
+        // FileResource("Java_codes\input\Course_2_ip\\nc_weather\\2013\\weather-2013-09-02.csv");
         // CSVParser parser = fr.getCSVParser();
         // CSVRecord res = MaxTemperaturDay(parser);
         // System.out.println(res.get("TemperatureF")+" at time "+ res.get("TimeEST"));
@@ -141,12 +144,16 @@ public class Weather {
         // System.out.println(res.get("TemperatureF") + " at time " +
         // res.get("DateUTC"));
         CSVRecord colCsvRecord = ColdestInDays();
-        System.out.println(colCsvRecord.get("TemperatureF")+ " at time " + colCsvRecord.get("DateUTC"));
+        System.out.println(colCsvRecord.get("TemperatureF") + " at time " + colCsvRecord.get("DateUTC"));
         // CSVRecord res = LowestHumidityInFile(parser);
-        // System.out.println("Lowest Humidity " + res.get("Humidity") + " at time " + res.get("DateUTC"));
+        // System.out.println("Lowest Humidity " + res.get("Humidity") + " at time " +
+        // res.get("DateUTC"));
         // CSVRecord res= LowestHumidityInMany();
-        // System.out.println("Lowest Humidity " + res.get("Humidity") + " at time " +  res.get("DateUTC"));
-        // System.out.println("Average Temperature is: " + AverageTemperatureInFile(parser));
-        // System.out.println("Average Temperature when high Humidity is: " + AverageTemperatureWithHighHumidityInFile(parser, 80));
+        // System.out.println("Lowest Humidity " + res.get("Humidity") + " at time " +
+        // res.get("DateUTC"));
+        // System.out.println("Average Temperature is: " +
+        // AverageTemperatureInFile(parser));
+        // System.out.println("Average Temperature when high Humidity is: " +
+        // AverageTemperatureWithHighHumidityInFile(parser, 80));
     }
 }

@@ -1,3 +1,5 @@
+package Course_2;
+
 public class Gene {
     public static String FindGene(String dna) {
         String result = "";

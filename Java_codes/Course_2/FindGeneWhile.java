@@ -1,3 +1,5 @@
+package Course_2;
+
 
 public class FindGeneWhile {
     public String FindGene(String dna) {

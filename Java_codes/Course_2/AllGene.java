@@ -1,3 +1,5 @@
+package Course_2;
+
 import edu.duke.FileResource;
 import edu.duke.StorageResource;
 
@@ -118,7 +120,7 @@ public class AllGene {
         System.out.println("the number of Strings in sr whose C-G-ratio is higher than 0.35 : " + cgCount);
         System.out.println("length of the longest gene in sr : " + maxSize);
     }
-    
+
     public String mystery(String dna) {
         int pos = dna.indexOf("T");
         int count = 0;
@@ -143,16 +145,15 @@ public class AllGene {
     public static void main(String[] args) {
         AllGene strAssignment = new AllGene();
 
-        StorageResource resListGene =
-        strAssignment.GetAllGene("AATGCTAACTAGCTGACTAAT");
+        StorageResource resListGene = strAssignment.GetAllGene("AATGCTAACTAGCTGACTAAT");
         for (String gene : resListGene.data()) {
             System.out.println(gene);
         }
         System.out.println(strAssignment.CGRatio("ATGCCATAG"));
         strAssignment.CountCTG("ATGCCTGATAG");
 
-        //change filename to evalute another file
-        FileResource fr = new FileResource("input/dna/GRch38dnapart.fa");
+        // change filename to evalute another file
+        FileResource fr = new FileResource("Java_codes\\input\\Course_2_ip\\dna\\GRch38dnapart.fa");
         String dna = fr.asString();
         StorageResource sr = new StorageResource();
         sr.add(dna);

@@ -1,3 +1,5 @@
+package Course_2;
+
 public class StringsSecondAssignments {
 
     public String FindGene(String dna, int pos) {

@@ -1,3 +1,5 @@
+package Course_2;
+
 public class Debugging {
     public static void findAbc(String input) {
         int index = input.indexOf("abc");

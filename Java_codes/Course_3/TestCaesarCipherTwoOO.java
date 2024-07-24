@@ -1,7 +1,5 @@
 package Course_3;
 
-import edu.duke.FileResource;
-
 public class TestCaesarCipherTwoOO {
 
     /**

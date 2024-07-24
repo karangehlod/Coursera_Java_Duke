@@ -1,3 +1,5 @@
+package Course_2;
+
 import edu.duke.URLResource;
 
 public class StringsFirstAssignments {
